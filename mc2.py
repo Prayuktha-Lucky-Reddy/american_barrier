@@ -549,7 +549,7 @@ if option_type == "Barrier":
     K = st.number_input("Strike Price (K)", value=1550.0)
     barrier_type = st.text_input("Barrier Type", ["up-in", "down-in"], key ="jiji")
     option_kind = st.text_input("Option Type", ["call", "put"], key="option")
-    T = st.slider("Time to Maturity (Years)", 0.1, 2.0, 1.0, kwy="haha")
+    T = st.slider("Time to Maturity (Years)", 0.1, 2.0, 1.0, key="haha")
     r = st.slider("Risk-Free Rate (r)", 0.00, 0.20, 0.06, key="hehe")
     n_steps = st.slider("Time Steps", 50, 365, 252, key="giwhf")
     n_paths = st.slider("Simulations", 1000, 50000, 10000, step=1000,key="hehfe")
@@ -576,6 +576,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
