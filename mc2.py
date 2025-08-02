@@ -409,7 +409,8 @@ if option_type == "American":
 
     fig.tight_layout()
     st.pyplot(fig)
-elif option_type == "Barrier":
+  
+if option_type == "Barrier":
  
  st.subheader("🔔 Barrier Option Pricing (Up-In / Down-In)")
  st.sidebar.header("📌 Option Parameters")
@@ -575,6 +576,7 @@ elif option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
