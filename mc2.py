@@ -304,8 +304,8 @@ if option_type == "American":
         ro1,ro2,ro3,ro4,ro5 = box2.columns(5)
         ro1.metric("Delta Call",f"₹{delta_call_bi:.2f}")
         ro1.metric("Delta Put",f"₹{delta_put_bi:.2f}")
-        ro2.metric("Gamma Call ", f"₹{gamma_call_bi:.2f}")
-        ro2.metric("Gamma put",f"₹{gamma_put_bi:.2f}")
+        ro2.metric("Gamma Call ", f"₹{abs(gamma_call_bi):.2f}")
+        ro2.metric("Gamma put",f"₹{abs(gamma_put_bi):.2f}")
         ro3.metric("Vega Call ",f"₹{vega_call_bi:.2f}")
         ro3.metric("vega put",f"₹{vega_put_bi:.2f}")
         ro4.metric("theta Call ",f"₹{theta_call_bi:.2f}")
@@ -321,8 +321,8 @@ if option_type == "American":
         col4, col5 , col6 , col7,col8 = box3.columns(5)
         col4.metric("Delta Call ",f"₹{delta_call:.2f}")
         col4.metric("Delta put",f"₹{delta_put:.2f}")
-        col5.metric("Gamma Call ", f"₹{gamma_call :.2f}")
-        col5.metric("Gamma put",f"₹{gamma_put:.2f}")
+        col5.metric("Gamma Call ", f"₹{abs(gamma_call ):.2f}")
+        col5.metric("Gamma put",f"₹{abs(gamma_put):.2f}")
         col6.metric("Vega Call ",f"₹{vega_call:.2f}")
         col6.metric("vega put",f"₹{vega_put:.2f}")
         col7.metric("theta Call ",f"₹{theta_call:.2f}")
@@ -504,7 +504,7 @@ if option_type == "Barrier":
     _, delta, gamma, vega, theta, rho = compute_greeks(S, sigma, r, True)
     colc = st.columns(5)
     colc[0].metric("Delta", f"{delta:.4f}")
-    colc[1].metric("Gamma", f"{gamma:.4f}")
+    colc[1].metric("Gamma", f"{abs(gamma):.4f}")
     colc[2].metric("Vega", f"{vega:.4f}")
     colc[3].metric("Theta", f"{theta:.4f}")
     colc[4].metric("Rho", f"{rho:.4f}")
@@ -513,7 +513,7 @@ if option_type == "Barrier":
     _, delta, gamma, vega, theta, rho = compute_greeks(S, sigma, r, False)
     colp = st.columns(5)
     colp[0].metric("Delta", f"{delta:.4f}")
-    colp[1].metric("Gamma", f"{gamma:.4f}")
+    colp[1].metric("Gamma", f"{abs(gamma):.4f}")
     colp[2].metric("Vega", f"{vega:.4f}")
     colp[3].metric("Theta", f"{theta:.4f}")
     colp[4].metric("Rho", f"{rho:.4f}")
@@ -576,6 +576,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
