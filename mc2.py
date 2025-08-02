@@ -142,7 +142,7 @@ if option_type == "American":
         Z = np.random.normal(size=(N, M))
         delta_lnSt = drift + random_term * Z
         lnS_initial = lnS[:, 0]  
-        lnS_initial = lnS[:, 0].reshape(N, 1)  
+        lnS_initial = lnS[:, 0].reshape(1, M)  
         lnSt = np.concatenate((np.full((1, M), lnS_initial), delta_lnSt), axis=0)
         lnst = np.cumsum(lnSt, axis=0)
 
@@ -576,7 +576,6 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
-
 
 
 
