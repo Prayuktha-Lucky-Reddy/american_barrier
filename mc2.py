@@ -190,7 +190,7 @@ if option_type == "American":
    with box4:
         # Plot 10 simulated paths
         box4.subheader("Simulated Stock Price Paths")
-        Z = plot_simulated_paths(S, vol, r, N, M=10000, T=T)
+        Z = plot_simulated_paths(S, vol, r, N, M=5000, T=T)
 
  n_steps = 10000
  step_size = 100
@@ -576,6 +576,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
