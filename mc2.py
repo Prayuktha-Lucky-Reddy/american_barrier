@@ -39,7 +39,7 @@ if option_type == "American":
  T = st.sidebar.number_input("Time to Maturity (T in years)", value=0.5,key="time")
  r = st.sidebar.number_input("Risk-Free Rate (r)", value=0.05,key="risk")
  N = st.sidebar.number_input("Time Steps (N)", value=250,key="time steps")
- M = st.sidebar.number_input("Simulations (M)", value=10000,key="simula")
+ M = st.sidebar.number_input("Simulations (M)", value=5000,key="simula")
 
  dt = T / N
  st.subheader("🔔 American Option Pricing")
@@ -576,6 +576,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
