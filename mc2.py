@@ -281,8 +281,8 @@ if option_type == "American":
  greeks = {'delta_call': [],'delta_put': [], 'gamma_call':[], 'gamma_put':[], 'vega_call':[], 'vega_put':[], 'theta_call':[], 'theta_put':[], 'rho_call':[], 'rho_put':[]}
  S_rang = np.linspace(S * 0.8, S * 1.2, 50)
 
- for S in S_rang:
-        delta_call, delta_put, gamma_call, gamma_put, vega_call, vega_put, theta_call, theta_put, rho_call, rho_put = american_lsmc_greeks(S,K,r,vol,T,N,M)
+ for S_val in S_rang:
+        delta_call, delta_put, gamma_call, gamma_put, vega_call, vega_put, theta_call, theta_put, rho_call, rho_put = american_lsmc_greeks(S_val,K,r,vol,T,N,M)
         greeks['delta_call'].append(delta_call)
         greeks['gamma_call'].append(gamma_call)
         greeks['vega_call'].append(vega_call)
@@ -314,7 +314,7 @@ if option_type == "American":
         ro5.metric("rho put",f"₹{rho_put_bi:.2f}")
 
 
- with tab2:
+ 
     box3 = st.container(border=True)
     with box3:
         box3.subheader("Greeks for American Options by LSMC method")
@@ -576,6 +576,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
