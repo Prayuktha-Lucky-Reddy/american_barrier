@@ -169,8 +169,6 @@ if option_type == "American":
  lsmc_put_price = lsmc_option(S_paths, K, r, dt, option_type='put')
  lsmc_call_price = lsmc_option(S_paths, K, r, dt, option_type='call')
 
- box2 = st.container(border=True)
- box3 = st.container(border=True)
  tab1, tab2, tab3 = st.tabs(['Option prices','Greeks','Price convergence graphs'])
  
  with tab1:
@@ -576,6 +574,7 @@ if option_type == "Barrier":
         st.pyplot(fig2)
 
     plot_convergence()
+
 
 
 
